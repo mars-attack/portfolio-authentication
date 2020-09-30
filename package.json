@@ -21,13 +21,15 @@
     "morgan": "~1.9.1",
     "popper.js": "^1.16.1"
   },
+  
   "description": "app for comp229",
-  "main": "index.js",
+  "main": "server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mars-attack/portfolio-assignment.git"
   },
+
   "author": "Marianne Palmer",
   "license": "ISC",
   "bugs": {
