@@ -1,5 +1,5 @@
-/* custom css goes here */
+/* custom css goes */
 
-.navbar-collapse {
-    flex-grow: initial;
+.navbar {
+    background-color: #3c2055 !important;
 }
