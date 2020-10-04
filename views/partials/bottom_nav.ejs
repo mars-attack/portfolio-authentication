@@ -1,6 +1,12 @@
   <!--Bootom Nav-->
   <footer>
-    <nav class="navbar fixed-bottom navbar-dark bg-dark">
-      <h6 class="display-6n navbar-text">&copy;<%= new Date().getFullYear();%> Marianne Palmer COMP229</h6>
+
+    <!--Fixed navbar on all other pages besides Projects page-->
+    <% if (title == "Projects") { %>
+      <nav class="navbar navbar-light bg-light justify-content-center">
+    <% } else { %>
+      <nav class="navbar fixed-bottom navbar-light bg-light justify-content-center">
+    <% } %> 
+      <h6 class="display-6n navbar-text text-center">&copy;<%= new Date().getFullYear();%> Marianne Palmer COMP229</h6>
     </nav>
   </footer>

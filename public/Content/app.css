@@ -1,13 +1,29 @@
 /* custom css goes */
-body {
-    background-color: whitesmoke;
-}
-.navbar {
-    background-color: #3c2055 !important;
-}
 
+
+/*custom css for projects page*/
 #sendButton, #cancelButton{
     width: 120px;
     margin-bottom: 100px;
 }
 
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    border: 1px solid #19c6ca;
+    background-color: #19c6ca;
+    border-radius: 50%;
+    padding: 15px;
+}
+.carousel-control-prev {
+    left: -40px;
+}
+
+.carousel-control-next {
+    right: -40px;
+}
+.carousel-right {
+    margin-right: 20px;
+}
+
+.carousel-left {
+    margin-left: 20px;
+}
