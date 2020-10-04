@@ -1,5 +1,13 @@
 /* custom css goes */
-
+body {
+    background-color: whitesmoke;
+}
 .navbar {
     background-color: #3c2055 !important;
 }
+
+#sendButton, #cancelButton{
+    width: 120px;
+    margin-bottom: 100px;
+}
+

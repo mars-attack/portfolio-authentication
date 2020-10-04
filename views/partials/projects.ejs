@@ -1,10 +1,13 @@
-<% include partials/header.ejs%> 
-<% include partials/main_nav.ejs %> 
+<!--Project content-->
+<div class="container justify-content-md-center">
+  <h1><%= title %></h1>
 
-<!--Main content-->
-  <h1>Welcome to the <%= title %> page</h1>
+ <div class="row card">
+    <div class="card-header">
+      Bug Smasher
+    </div>  
     <!--carousel-->
-    <div id="carouselExampleIndicators" class="carousel slide col-md-5 col-sm-8 justify-content-md-center" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide col-md-5 col-sm-8" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -26,9 +29,11 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+ </div>
 
-
-    <div id="carouselExampleIndicators2" class="carousel slide col-md-5 col-sm-8 justify-content-md-center" data-ride="carousel">
+ <div class="row card">
+  <!--carousel-->
+    <div id="carouselExampleIndicators2" class="carousel slide col-md-5 col-sm-8" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -53,8 +58,5 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-
-    
-
-<% include partials/bottom_nav.ejs %> 
-<% include partials/footer.ejs %> 
+  </div>
+</div>
