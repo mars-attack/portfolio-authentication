@@ -1,6 +1,9 @@
 /* custom css goes */
 
-
+/*About me page*/
+#profile-picture {
+    width: 400px;
+}
 /*custom css for projects page*/
 #sendButton, #cancelButton{
     width: 120px;
