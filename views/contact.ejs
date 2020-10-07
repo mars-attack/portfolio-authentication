@@ -1,50 +1,58 @@
-<!--Contact Form-->
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
 
-  <form class="container justify-content-md-center">
-    <h1 class="display-3 p-3"><%= title %> Me</h1>
+<!--Contact Form-->
+<main>
+  <h1 class="display-3 p-3 text-center"><%= title %> Me</h1>
+
+  <form class="container" id="form-container">
     <div class="form-group">
-      <label for="firstName" class="col-sm-2 col-form-label-lg">First Name</label>
-      <div class="col-sm-10">
+      <label for="firstName" class="col-form-label-lg">First Name</label>
+      <div>
         <input type="text" class="form-control form-control-lg" id="firstName" placeholder="First Name" required>
       </div>
     </div>
     <div class="form-group">
-      <label for="lastName" class="col-sm-2 col-form-label-lg">Last Name</label>
-      <div class="col-sm-10">
+      <label for="lastName" class="col-form-label-lg">Last Name</label>
+      <div>
         <input type="text" class="form-control form-control-lg" id="lastName" placeholder="Last Name" required>
       </div>
     </div>
     <div class="form-group">
-      <label for="contactNumber" class="col-sm-2 col-form-label-lg">Contact Number</label>
-      <div class="col-sm-10">
+      <label for="contactNumber" class="col-form-label-lg">Contact Number</label>
+      <div>
         <input type="tel" class="form-control form-control-lg" id="contactNumber" placeholder="Contact Number">
       </div>
     </div>
     <div class="form-group">
-      <label for="emailAddress" class="col-sm-2 col-form-label-lg">Email</label>
-      <div class="col-sm-10">
+      <label for="emailAddress" class="col-form-label-lg">Email</label>
+      <div>
         <input type="email" class="form-control form-control-lg" id="emailAddress" placeholder="Email" required>
       </div>
     </div>
 
     <!--Message-->
     <div class="form-group">
-      <label for="exampleFormControlTextarea1" class="col-sm-2 form-control-lg">Your Message</label>
-      <div class="col-sm-10">
+      <label for="exampleFormControlTextarea1" class="col-form-label-lg">Your Message</label>
+      <div>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
       </div>
     </div>  
     
     <div class="row col-md-auto">
       <div class="form-group">
-        <div class="col-sm-10">
+        <div class="form-buttons">
           <button type="submit" class="btn-lg btn-warning" id="cancelButton"><i class="fas fa-undo-alt"></i> Cancel</button>
         </div>
       </div>
-      <div class="form-group">
-        <div class="col-sm-10">
+      <div class="from-buttoms">
+        <div class="">
           <button type="submit" class="btn-lg btn-primary" id="sendButton"><i class="fas fa-paper-plane"></i> Send</button>
         </div>
       </div>
     </div>
   </form>
+</main>
+
+<%- include partials/bottom_nav.ejs %>
+<%-include partials/footer.ejs %>

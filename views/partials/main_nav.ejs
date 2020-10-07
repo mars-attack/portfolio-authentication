@@ -1,5 +1,5 @@
 <!-- Main Navigation -->
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light d-flex justify-content-between shadow">
   <a class="navbar-brand" href="/home">
     <img src="/Assets/images/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
     Marianne Palmer
@@ -9,8 +9,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
-
+   
+      <!--Active if on current page-->
       
+      <% if (title == "Home") { %>
+        <li class="nav-item active">
+      <% } else { %>
+        <li class="nav-item">
+      <% } %> 
         <a class="nav-link" href="/home"><i class="fas fa-lg fa-home"></i> Home <span class="sr-only">(current)</span></a>
       </li>
 

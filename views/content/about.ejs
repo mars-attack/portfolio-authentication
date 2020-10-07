@@ -1,35 +1,40 @@
 
 <!--About content-->
-  <div class="container">
-    <h1 class="display-3 p-3 text-center"><%= title %> Me</h1>
-    <div class="d-flex justify-content-between">
-      <div class="m-4 shadow rounded">
-        <img id="profile-picture" class="rounded" src="/Assets/images/intoPic.jpg" alt="Image of Marianne Palmer">
-      </div>
-      <div class="about-details m-4">
-        <p class="display-4">Hi! I'm <em>Marianne Palmer</em></p>
-        <p class="lead">I'm originally from St. Lucia, a small island in the Eastern Caribbean. 
-          I moved to Canada about 10 years ago for university. I later graduated from McMaster University in the field of Economics. 
-          Currently, I am a third semester student at Centennial College, pursuing an Advanced Degree in
-          Software Engineering Technology.
-        </p>
-        <p class="lead">Some of my favorite things to do are:</p>
-        <ul>
-          <li class="lead">Watching movies</li>
-          <li class="lead">Playing video games</li>
-          <li class="lead">Chilling with my cat, River</li>
-        </ul>
-        <hr class="my-4">
-        <a href="/Assets/Marianne_Palmer_Resume.pdf" target="_blank" download>
-          <button type="button" id="downloadResumeBTN" class="btn btn-success">
-            <i class="fas fa-cloud-download-alt"></i> 
-            Download Resume
-          </button>
-        </a>
-        <button type="button" id="viewResumeBTN" class="btn btn-info">
-          <i class="fas fa-binoculars"></i> 
-          View Resume
+<h1 class="display-3 p-3 text-center"><%= title %> Me</h1>
+
+<div class="container bg-light rounded">
+  <div class="d-flex justify-content-between">
+
+    <!--Profile Picture - Left side of page-->
+    <div class="m-4 shadow rounded">
+      <img id="profile-picture" class="rounded" src="/Assets/images/intoPic.jpg" alt="Image of Marianne Palmer">
+    </div>
+
+    <!--Right side of page -->
+    <div class="about-details m-4">
+      <p class="display-4">Hi! I'm <em>Marianne Palmer</em></p>
+      <p class="lead">I'm originally from St. Lucia, a small island in the Eastern Caribbean. 
+        I moved to Canada about 10 years ago for university. I later graduated from McMaster University in the field of Economics. 
+        Currently, I am a third semester student at Centennial College, pursuing an Advanced Degree in
+        Software Engineering Technology.
+      </p>
+      <p class="lead">Some of my favorite things to do are:</p>
+      <ul>
+        <li class="lead">Watching movies</li>
+        <li class="lead">Playing video games</li>
+        <li class="lead">Chilling with my cat, River</li>
+      </ul>
+      <hr class="my-4">
+      <a href="/Assets/Marianne_Palmer_Resume.pdf" target="_blank" download>
+        <button type="button" id="downloadResumeBTN" class="btn btn-success">
+          <i class="fas fa-cloud-download-alt"></i> 
+          Download Resume
         </button>
-      </div>
+      </a>
+      <button type="button" id="viewResumeBTN" class="btn btn-info">
+        <i class="fas fa-binoculars"></i> 
+        View Resume
+      </button>
     </div>
   </div>
+</div>
