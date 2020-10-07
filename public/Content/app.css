@@ -73,3 +73,19 @@ main {
 .form-buttons{
     padding-right: 15px;
 }
+
+#contact-page-img {
+    max-width: 200px;
+    border-radius: 50%;
+    border: 10px solid #19c6ca;
+}
+
+.contact-links {
+    color: #563d7c;
+}
+
+.contact-links:hover{
+    text-decoration: none;
+    transform: scale(1.3);
+    transition: all .2s ease-in-out;
+}
