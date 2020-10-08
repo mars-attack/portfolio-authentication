@@ -2,10 +2,22 @@
 <% include partials/main_nav.ejs %>
 
 <div class="container">
-  <h1><%= message %></h1>
-  <h2><%= error.status %></h2>
-  <pre><%= error.stack %></pre>
+
+<!--
+  Error image from:
+  <a href='https://www.freepik.com/vectors/background'>Background vector created by freepik - www.freepik.com</a>
+--> 
+  <% if(error.status == 404) { %>
+    <img class="rounded mx-auto d-block p-5" src="/Assets/images/404.png">
+  <%} else {%>
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+  <%} 
+  %>
+
 </div>
+
 
 <% include partials/bottom_nav.ejs %>
 <% include partials/footer.ejs %>

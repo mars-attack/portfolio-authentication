@@ -4,7 +4,7 @@
         console.log('App Started....');
 
 
-        if(document.title === "About") {
+        if(document.title === "Projects") {
             $('.carousel').carousel('pause'); // prevents carousel from auto changing slides
         }
 
