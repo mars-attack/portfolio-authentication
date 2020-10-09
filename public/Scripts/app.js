@@ -1,8 +1,14 @@
+/*
+File: app.js
+Name: Marianne Palmer
+Student#: 301122149
+Date: Oct 8th 2020
+*/
+
 (function(){
     function Start()
     {
         console.log('App Started....');
-
 
         if(document.title === "Projects") {
             $('.carousel').carousel('pause'); // prevents carousel from auto changing slides

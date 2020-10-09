@@ -1,10 +1,17 @@
+  <!-- 
+  File: contact.ejs
+  Name: Marianne Palmer
+  Student#: 301122149
+  Date: Oct 8th 2020
+   --> 
+
 <%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
 
-<!--Contact Form-->
 <main>
   <h1 class="display-3 p-3 text-center"><%= title %> Me</h1>
 
+  <!--Section for contact information-->
   <div class="container d-flex align-items-center flex-column">
     <img id="contact-page-img" src="/Assets/images/contact.jpg" alt="contact Marianne">
 
@@ -15,6 +22,7 @@
     </ul>
   </div>
 
+  <!--Contact Form-->
   <form class="container" id="form-container">
     <div class="form-group">
       <label for="firstName" class="col-form-label-lg">First Name</label>
@@ -41,26 +49,18 @@
       </div>
     </div>
 
-    <!--Message-->
+    <!--Message label and input-->
     <div class="form-group">
       <label for="message" class="col-form-label-lg">Your Message</label>
       <div>
         <textarea class="form-control" id="message" rows="3" required></textarea>
       </div>
-    </div>  
-    
-    <div class="row col-md-auto">
-      <div class="form-group">
-        <div class="form-buttons">
-          <button type="submit" class="btn-lg btn-warning" id="cancelButton"><i class="fas fa-undo-alt"></i> Cancel</button>
-        </div>
-      </div>
-      <div class="from-buttoms">
-        <div class="">
-          <button type="submit" class="btn-lg btn-primary" id="sendButton"><i class="fas fa-paper-plane"></i> Send</button>
-        </div>
-      </div>
     </div>
+
+    <!--Form buttons-->
+    <button type="submit" class="btn-lg btn-warning" id="cancelButton"><i class="fas fa-undo-alt"></i> Cancel</button>
+    <button type="submit" class="btn-lg btn-primary" id="sendButton"><i class="fas fa-paper-plane"></i> Send</button>
+
   </form>
 
 </main>

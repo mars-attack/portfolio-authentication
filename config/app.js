@@ -1,3 +1,10 @@
+/* 
+File: app.js
+Name: Marianne Palmer
+Student#: 301122149
+Date: Oct 8th 2020
+ */
+
 // intstalled 3rd party
 let createError = require('http-errors');
 let express = require('express');
@@ -14,11 +21,12 @@ let app = express();
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
-// middlewares
+// registering middlewares
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
 

@@ -1,5 +1,11 @@
+   <!-- 
+  File: index.ejs
+  Name: Marianne Palmer
+  Student#: 301122149
+  Date: Oct 8th 2020
+   --> 
+
 <%- include partials/header.ejs %>
-  
 <%- include partials/main_nav.ejs %>
   <!--Main Content-->
   <main>
@@ -11,9 +17,8 @@
       <%- include content/projects.ejs %>
     <% } else if (title == "Services") { %>
       <%- include content/services.ejs %>
-    <% } 
-    %> 
+    <% } %> 
   </main> 
 
-  <%- include partials/bottom_nav.ejs %>
-  <%-include partials/footer.ejs %>
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
