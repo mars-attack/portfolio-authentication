@@ -15,15 +15,15 @@ Date: Oct 9th 2020
         }
 
         if(document.title === "About") {
-            // opens resume in a new window ans centers it based on the screen's dimensions
+            // opens resume in a new window and centers it based on the screen's dimensions
             function openResume(myURL, title, screenWidth, screenHeight) {
-                let top = (screen.height - screenHeight) / 2;
+                let top = (screen.height - screenHeight) / 2; // calculating the offset values
                 let left = (screen.width - screenWidth) / 2;
                 window.open(myURL, title, 'width=' + screenWidth + ', height=' + screenHeight + ', top=' + top + ', left=' + left);
             }
              
             let viewResumeBTN = document.getElementById('viewResumeBTN');
-            viewResumeBTN.addEventListener('click', () => openResume('/Assets/Marianne_Palmer_Resume.pdf', 'Marianne Palmer - Resume', 1050, 550));             
+            viewResumeBTN.addEventListener('click', () => openResume('/Assets/Marianne_Palmer_Resume.pdf', 'Marianne Palmer - Resume', 850, 750));             
         }
 
         if(document.title === "Contact") {
