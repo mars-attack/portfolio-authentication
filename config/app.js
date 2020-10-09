@@ -2,7 +2,7 @@
 File: app.js
 Name: Marianne Palmer
 Student#: 301122149
-Date: Oct 8th 2020
+Date: Oct 9th 2020
  */
 
 // intstalled 3rd party
