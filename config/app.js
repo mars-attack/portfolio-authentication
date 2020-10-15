@@ -12,6 +12,20 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+// database setup
+let mongoose = require('mongoose');
+let DB = require('./db');
+
+// point mongoose to the db URI
+mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true} ); // connects to mongo database locally
+
+let mongoDB = mongoose.connection;
+mongoDB.on('errror', console.error.bind(console, 'Conection Error: ')); // if there is a connection error, this will send an error message to the console
+mongoDB.once('open', ()=> {
+  console.log('Connected to MongoDB...');
+})
+
+
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 
@@ -19,7 +33,7 @@ let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); // express -e
 
 // registering middlewares
 app.use(logger('dev'));
