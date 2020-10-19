@@ -51,6 +51,14 @@
         <a class="nav-link" href="/services"><i class="fas fa-lg fa-tools"></i> Services</a>
       </li>
 
+      <% if (title == "Business Contacts" || title == "Add Business Contact" || title == "Update Business Contact") { %>
+        <li class="nav-item active">
+      <% } else { %>
+        <li class="nav-item">
+      <% } %> 
+        <a class="nav-link" href="/business-contacts"><i class="fas fa-lg fa-at"></i> Business Contact</a>
+      </li>
+
       <% if (title == "Contact") { %>
         <li class="nav-item active">
       <% } else { %>
