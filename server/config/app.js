@@ -15,8 +15,12 @@ let logger = require('morgan');
 // 3rd party modules for authentication
 let session = require('express-session');
 let passport =  require('passport');
+
+// authentication strategy
 let passportLocal = require('passport-local');
 let localStrategy = passportLocal.Strategy;
+
+// authentication messages
 let flash = require('connect-flash');
 
 
@@ -55,8 +59,8 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 // setup express session
 app.use(session({
-  secret: "SomeSecret",
-  saveUniinitialiazes: false,
+  secret: DB.Secret,
+  saveUninitialiazed: false,
   resave: false
 }));
 
@@ -67,11 +71,12 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// passport user configuration
-
 //create a user instance
-let userModel = require('../models/user');
-let User = userModel.User;
+let user = require('../models/user');
+let User = user.Model;
+
+// implement a user authenitication strategy
+passport.use(User.createStrategy());
 
 //serialize and deserialize (encrypt/decript) user info
 passport.serializeUser(User.serializeUser());

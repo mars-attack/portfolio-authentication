@@ -2,29 +2,40 @@ let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
 
-// connect to our Contact Model
-let BusinessContact = require('../models/business-contact');
+let passport = require('passport');
 
 let businessContactController = require('../controllers/business-contacts');
 
-// GET Route for 
+// Helper function for gaurd purposes
+
+function requireAuth(req, res, next) {
+  // check if the user is logged in
+  if(!req.isAuthenticated())
+  {
+    return res.redirect('/login');
+  }
+  next();
+}
+
+
+// GET Route for displaying business contact list
 
 router.get('/', businessContactController.displayBusinessContactList);
 
 // GET Route for displaying the Add Page - Create operation 
-router.get('/add', businessContactController.displayAddPage);
+router.get('/add', requireAuth, businessContactController.displayAddPage);
 
 // GET Route for processing the Add Page - Create operation 
-router.post('/add', businessContactController.processAddPage);
+router.post('/add', requireAuth, businessContactController.processAddPage);
 
 
 /* GET Route for displaying the Edit Page - UPDATE operation */
-router.get('/update/:id', businessContactController.displayUpdatePage);
+router.get('/update/:id', requireAuth, businessContactController.displayUpdatePage);
 
 /* GET Route for processing the Edit Page - UPDATE operation */
-router.post('/update/:id', businessContactController.processUpdatePage);
+router.post('/update/:id', requireAuth, businessContactController.processUpdatePage);
 
 // GET Route to perform the Deletion - DELETE operation
-router.get('/delete/:id', businessContactController.processDelete);
+router.get('/delete/:id', requireAuth, businessContactController.processDelete);
 
 module.exports = router;

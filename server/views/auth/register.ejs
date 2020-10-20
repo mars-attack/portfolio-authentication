@@ -2,11 +2,11 @@
 <%- include('../partials/main_nav.ejs') -%>
 
 <!-- Message Area-->
-<%= if(messages.length > 0) {%>
+<% if (messages.length > 0) { %>
   <div class="alert alert-danger">
     <%= messages %>
   </div>
-<%} %>
+<% } %>
 
 <div class="row">
 
@@ -47,6 +47,7 @@
         <label for="password">Password: </label>
         <input type="password" class="form-control" 
         id="password" 
+        name="password"
         placeholder="Enter password"
         required>
       </fieldset>
