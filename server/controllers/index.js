@@ -49,7 +49,7 @@ module.exports.displayLoginPage = (req, res, next) => {
 
 module.exports.processLoginPage = (req, res, next) => {
   passport.authenticate('local',
-  (err, use, info) =>
+  (err, user, info) =>
   {
     // if server error
     if(err)
