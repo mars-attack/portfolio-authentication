@@ -10,23 +10,23 @@ let User = userModel.Model; // alias
 
 
 module.exports.displayHomePage = (req, res, next) => {
-  res.render('index', { title: 'Home', heading: 'Marianne Palmer' });
+  res.render('index', { title: 'Home', heading: 'Marianne Palmer', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayAboutPage = (req, res, next) => {
-  res.render('index', { title: 'About' });
+  res.render('index', { title: 'About', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayProjectsPage = (req, res, next) => {
-  res.render('index', { title: 'Projects' });
+  res.render('index', { title: 'Projects', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayServicesPage = (req, res, next) => {
-  res.render('index', { title: 'Services' });
+  res.render('index', { title: 'Services', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayContactPage = (req, res, next) => {
-  res.render('contact', { title: 'Contact' });
+  res.render('contact', { title: 'Contact', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayLoginPage = (req, res, next) => {
@@ -137,5 +137,5 @@ module.exports.processRegisterPage = (req, res, next) => {
 
 module.exports.performLogout = (req, res, next) => {
   req.logout();
-  req.redirect('/');
+  res.redirect('/');
 }

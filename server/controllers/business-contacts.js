@@ -4,7 +4,7 @@ let router = express.Router();
 // create a reference to Business Contact schema
 let BusinessContact = require('../models/business-contact');
 
-
+// user model required for nav
 module.exports.displayBusinessContactList = (req, res, next)=>{
   BusinessContact.find((err, ContactList) => {
     if(err) 
@@ -14,13 +14,13 @@ module.exports.displayBusinessContactList = (req, res, next)=>{
     } 
     else 
     {
-      res.render('business-contacts/list', {title: "Business Contacts", ContactList: ContactList});
+      res.render('business-contacts/list', {title: "Business Contacts", ContactList: ContactList, displayName: req.user ? req.user.displayName : ''});
     }
   });
 }
 
 module.exports.displayAddPage = (req, res, next) => {
-  res.render('business-contacts/add', { title: 'Add Business Contact'});
+  res.render('business-contacts/add', { title: 'Add Business Contact', displayName: req.user ? req.user.displayName : ''});
 };
 
 module.exports.processAddPage = (req, res, next) => {
@@ -54,7 +54,7 @@ module.exports.displayUpdatePage = (req, res, next) => {
     }
     else
     {
-      res.render('business-contacts/update', {title: "Update Business Contact", contact: contactToEdit})
+      res.render('business-contacts/update', {title: "Update Business Contact", contact: contactToEdit, displayName: req.user ? req.user.displayName : ''})
     }
   });
 };

@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs') -%>
 <%- include('../partials/main_nav.ejs') -%>
 
-<main class="container">
+<main class="container mt-5">
 
   <!-- Message Area-->
 
@@ -18,33 +18,33 @@
 
       <form method="POST" autocomplete="off">
 
-        <feildset class="form-group">
+        <div class="form-group">
           <label for="username">Username</label>
           <input type="text" class="form-control" 
           id="username" 
           name="username" 
           placeholder="Enter username"
           required autofocus>
-        </feildset>
+        </div>
 
-        <feildset class="form-group">
+        <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" 
+          <input type="password" class="form-control mb-1" 
           id="password" 
           name="password"
           placeholder="Enter password"
           required>
           or
-          <a href="/register"> Register Here</a>
-        </feildset>
+          <a href="/register"> register here</a>
+        </div>
 
-        <feildset class="form-group text-right">
+        <div class="form-group text-right">
           <input type="submit" class="btn btn-success" value="login">
           
           <a href="/">
             <input type="button" class="btn btn-warning" value="cancel">
           </a>
-        </feildset>
+        </div>
       </form>
     
     </div>
