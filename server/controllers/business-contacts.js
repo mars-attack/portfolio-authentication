@@ -14,9 +14,13 @@ module.exports.displayBusinessContactList = (req, res, next)=>{
     } 
     else 
     {
-      res.render('business-contacts/list', {title: "Business Contacts", ContactList: ContactList, displayName: req.user ? req.user.displayName : ''});
+      res.render('business-contacts/list', {
+        title: "Business Contacts", 
+        ContactList: ContactList, 
+        displayName: req.user ? req.user.displayName : ''});
     }
-  });
+    // Sorting by contact name alphabetically
+  }).sort({contact_name: 1});
 }
 
 module.exports.displayAddPage = (req, res, next) => {

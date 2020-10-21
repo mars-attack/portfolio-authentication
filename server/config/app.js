@@ -60,7 +60,7 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 // setup express session
 app.use(session({
   secret: DB.Secret,
-  saveUninitialiazed: false,
+  saveUninitialized: false,
   resave: false
 }));
 

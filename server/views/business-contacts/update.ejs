@@ -37,15 +37,22 @@
         
         <button class="btn btn-primary">
           <i class="fas fa-edit"></i>
-          Submit
+          Update
         </button>
 
-        <button class="btn btn-warning">
+        <!--Delete Contact-->
+        <a href="/business-contacts/delete/<%=contact._id%>" class="btn btn-danger" id="cancelButton">
+          <i class="fas fa-edit"></i>
+          Delete
+        </a>
+
+        <a href="/business-contacts" class="btn btn-warning">
           <i class="fas fa-undo"></i>
-          Cancel
-        </button>
-
+          cancel
+        </a>
+        
       </form>
+    
     </div>
   </div>
 </main>
