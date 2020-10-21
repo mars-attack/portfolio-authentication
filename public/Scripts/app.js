@@ -10,6 +10,19 @@ Date: Oct 9th 2020
     {
         console.log('App Started....');
 
+
+        // Asks user to confirm before delete for all delete buttons
+        let deleteButtons = document.querySelectorAll('.btn-danger');
+
+        for(button of deleteButtons) {
+            button.addEventListener('click', (event)=>{
+                if(!confirm("Are your sure?")) {
+                    event.preventDefault();
+                    window.location.assign('/business-contacts');
+                }
+            });
+        }
+
         if(document.title === "Projects") {
             $('.carousel').carousel('pause'); // prevents carousel from auto changing slides
         }

@@ -53,10 +53,10 @@
         <a class="nav-link" href="/contact"><i class="fas fa-lg fa-at"></i> Contact</a>
       </li>
 
-      <!--Check if display name exists first-->
+      <!-- Check if display name exists first -->
       <% if (typeof displayName == 'string' && displayName) { %>
 
-        <!--if user exists, navbar will be ajusted -->
+        <!-- if user exists, business contact list added to nav -->
         <% if (title == "Business Contacts" || title == "Add Business Contact" || title == "Update Business Contact") { %>
           <li class="nav-item active">
         <% } else { %>
@@ -64,7 +64,8 @@
         <% } %> 
           <a class="nav-link" href="/business-contacts"><i class="fas fa-lg fa-address-book"></i> Business Contact</a>
         </li>
-
+        
+        <!-- if user exists, welcome message and logout link added to nav -->
         <li class="navbar-text"><em><i class="fas fa-lg fa-user"></i>Welcome, <%= displayName %></em></li>
         <li class="nav-item">
           <a href="/logout" class="nav-link">
@@ -72,11 +73,12 @@
             logout
           </a>
         </li>
-      <!--if no display name, login option-->
+
+      <!-- if not logged in, display login option -->
       <% } else { %>
         <li class="nav-item">
           <a href="/login" class="nav-link">
-            <i class="fas fas-lg fa-sign-in-alt"></i>
+            <i class="fas fa-lg fa-sign-in-alt"></i>
             Login
           </a>
         </li>
