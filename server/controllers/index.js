@@ -37,13 +37,13 @@ module.exports.displayLoginPage = (req, res, next) => {
     res.render('auth/login',
     {
       title: "Login",
-      messages: req.flash('loginMessage'),
+      messages: req.flash('loginMessage'), 
       displayName: req.user ? req.user.displayName : ''
     });
   }
   else
   {
-    return res.redirect('/');
+    return res.redirect('/'); // if user is logged in and clicks login
   }
 }
 
@@ -58,15 +58,16 @@ module.exports.processLoginPage = (req, res, next) => {
       return next(err);
     }
     
-    // if there is a user login error
+    // if not a user, redirect to login
     if(!user)
     {
       req.flash('loginMessage', 'Authentication Error');
       return res.redirect('/login');
     }
 
+    
     req.login(user, (err) => {
-      //server error
+      // if server error, pass to next middleware
       if(err)
       {
         console.log(err);
@@ -74,7 +75,7 @@ module.exports.processLoginPage = (req, res, next) => {
       }
       else
       {
-        res.redirect('/business-contacts')
+        res.redirect('/business-contacts') // login success
       }
     });
 
@@ -90,7 +91,6 @@ module.exports.displayRegisterPage = (req, res, next) => {
       title: "Register",
       messages: req.flash('resisterMessage'),
       displayName: req.user ? req.user.displayName : ''
-
     });
   }
   else
@@ -108,7 +108,7 @@ module.exports.processRegisterPage = (req, res, next) => {
   });
 
   User.register(newUser, req.body.password, (err) => {
-    // check for errors
+    // check for errors and if user already exists
     if(err)
     {
       console.log("Error: Inserting new user");

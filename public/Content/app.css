@@ -198,3 +198,9 @@ em {
     transform: scale(1.3);
     transition: all .3s ease-in-out;
 }
+
+/* Update Business Contact Page */
+
+#updatePageDeleteButton {
+    margin: 0;
+}
