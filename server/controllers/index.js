@@ -1,3 +1,10 @@
+/* 
+File: controllers/index.js
+Name: Marianne Palmer
+Student#: 301122149
+Date: Oct 25th 2020
+ */
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -28,6 +35,8 @@ module.exports.displayServicesPage = (req, res, next) => {
 module.exports.displayContactPage = (req, res, next) => {
   res.render('contact', { title: 'Contact', displayName: req.user ? req.user.displayName : ''});
 }
+
+// Authentication Section
 
 module.exports.displayLoginPage = (req, res, next) => {
   // check if the user us already logged in

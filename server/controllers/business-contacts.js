@@ -1,11 +1,19 @@
+/* 
+File: controllers/business-contacts.js
+Name: Marianne Palmer
+Student#: 301122149
+Date: Oct 25th 2020
+ */
+
 let express = require('express');
 let router = express.Router();
 
 // create a reference to Business Contact schema
 let BusinessContact = require('../models/business-contact');
 
-// user model required for nav
+
 module.exports.displayBusinessContactList = (req, res, next)=>{
+  // user model required for nav
   BusinessContact.find((err, ContactList) => {
     if(err) 
     {
@@ -23,9 +31,11 @@ module.exports.displayBusinessContactList = (req, res, next)=>{
   }).sort({contact_name: 1});
 }
 
+
 module.exports.displayAddPage = (req, res, next) => {
   res.render('business-contacts/add', { title: 'Add Business Contact', displayName: req.user ? req.user.displayName : ''});
 };
+
 
 module.exports.processAddPage = (req, res, next) => {
   let newContact = BusinessContact({
@@ -47,6 +57,7 @@ module.exports.processAddPage = (req, res, next) => {
     }
   });
 };
+
 
 module.exports.displayUpdatePage = (req, res, next) => {
   let id = req.params.id;

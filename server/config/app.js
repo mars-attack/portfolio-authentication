@@ -2,36 +2,36 @@
 File: app.js
 Name: Marianne Palmer
 Student#: 301122149
-Date: Oct 23rd 2020
+Date: Oct 25th 2020
  */
 
-// intstalled 3rd party modules
+// import 3rd party modules
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
-// intstalled 3rd party modules for authentication
+//* import 3rd party modules for authentication
 let session = require('express-session');
 let passport =  require('passport');
 
-// installed authentication strategy
+//* import authentication strategy
 let passportLocal = require('passport-local');
 let localStrategy = passportLocal.Strategy;
 
-// istalled authentication messages
+// * import authentication messages
 let flash = require('connect-flash');
 
-/*database setup */
+//* database setup
 
 let mongoose = require('mongoose');
 let DB = require('./db');
 
-// point mongoose to the db URI
+//* point mongoose to the db URI
 mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true} ); // connects to MongoDB Atlas
 
-// configuring connection listeners
+//* configuring connection listeners
 let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error: ')); // if there is a connection error, this will send an error message to the console
 mongoDB.once('open', ()=> {
@@ -58,28 +58,28 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-// setup express session
+//* setup express session
 app.use(session({
   secret: DB.Secret,
   saveUninitialized: false,
   resave: false
 }));
 
-// initialize flash - maintains error messages
+//* initialize flash - maintains error messages
 app.use(flash());
 
-// initialize passport
+//* initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
 
-//create a user instance
+//*create a user instance
 let user = require('../models/user');
 let User = user.Model;
 
-// implement a user authenitication strategy
+//* implement a user authenitication strategy
 passport.use(User.createStrategy());
 
-//serialize and deserialize (encrypt/decript) user info
+//* serialize and deserialize (encrypt/decript) user info
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 

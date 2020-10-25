@@ -1,3 +1,5 @@
+<!-- Update business conatact view -->
+
 <%- include('../partials/header.ejs') -%>
 <%- include('../partials/main_nav.ejs') -%>
   
@@ -35,17 +37,19 @@
           name="email_address" required>
         </div>
         
+        <!-- Button to update contact-->
         <button class="btn btn-primary mr-2">
           <i class="fas fa-edit"></i>
           Update
         </button>
 
-        <!--Delete Contact-->
+        <!-- Button to delete contact-->
         <a href="/business-contacts/delete/<%=contact._id%>" class="btn btn-danger mr-2" id="updatePageDeleteButton">
           <i class="fas fa-trash-alt"></i>
           Delete
         </a>
 
+        <!-- Cancel button-->
         <a href="/business-contacts" class="btn btn-warning mr-2">
           <i class="fas fa-undo"></i>
           cancel

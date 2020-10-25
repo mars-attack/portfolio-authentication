@@ -2,7 +2,7 @@
 File: app.js
 Name: Marianne Palmer
 Student#: 301122149
-Date: Oct 9th 2020
+Date: Oct 25th 2020
 */
 
 (function(){
@@ -11,6 +11,7 @@ Date: Oct 9th 2020
         console.log('App Started....');
 
 
+        /* BUSINESS CONTACTS LIST PAGE */
         // Asks user to confirm before delete for all delete buttons
         let deleteButtons = document.querySelectorAll('.btn-danger');
 
@@ -22,10 +23,12 @@ Date: Oct 9th 2020
             });
         }
     
+        /* PROJECTS PAGE */
         if(document.title === "Projects") {
             $('.carousel').carousel('pause'); // prevents carousel from auto changing slides
         }
 
+        /* ABOUT PAGE */
         if(document.title === "About") {
             // opens resume in a new window and centers it based on the screen's dimensions
             function openResume(myURL, title, screenWidth, screenHeight) {
@@ -38,6 +41,7 @@ Date: Oct 9th 2020
             viewResumeBTN.addEventListener('click', () => openResume('/Assets/Marianne_Palmer_Resume.pdf', 'Marianne Palmer - Resume', 850, 750));             
         }
 
+        /* CONTACT PAGE */
         if(document.title === "Contact") {
             let sendButton = document.getElementById('sendButton');
             let cancelButton = document.getElementById('cancelButton');
